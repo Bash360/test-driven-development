@@ -4,6 +4,7 @@
   "description": "",
   "main": "add.js",
   "dependencies": {
+    "node-fetch": "^2.3.0",
     "package.json": "^2.0.1"
   },
   "devDependencies": {
