@@ -7,4 +7,3 @@ function sum(a,b){
    
 }
 module.exports=sum;
-console.log(sum(0.1,0.2));
