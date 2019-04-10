@@ -1,4 +1,4 @@
-function sum(a,b){
+ function sum(a,b){
     
     if((typeof(a)==="number" && a!==Infinity)  && (typeof(b)==="number" && b!==Infinity)){
         let sum=a+b;

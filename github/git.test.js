@@ -1,6 +1,8 @@
-const git=require("./git");
+const git = require("./git.js");
+
+
  test("expect git(\"wolfman360\") to return data ",()=>{
-     expect(git("wolfman360")).not.toBe("");
+     git("wolfman360").then().toBe("");
  });
  test("expect git() to return not a string ",()=>{
     expect(git()).toBe("not a string");

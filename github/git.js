@@ -1,21 +1,25 @@
 function git(username){
-    const fetch=require("node-fetch");
-    
+    const fetch=require("node-fetch"); 
     if(typeof(username)==="string"){
-        username.trim();
-        if(username.length===0){
+        
+        filteredUsername=username.trim();
+        if(filteredUsername.length===0){
             return "cannot be empty";
         }else{
-            let url=`https://api.github.com/users/${username}/repos?direction=${"desc"}`;
-    fetch(url).then(function(response,status){
-    return response.json();
-    }).then(function(response){
-        return response;
-    });
+            let url=`https://api.github.com/users/${filteredUserna}/repos?direction=${"desc"}`;
+            fetch(url).then((response)=>{
+                if(!response.ok){
+         throw Error(response.statusText);
+                }
+                else{return response.json()}
+            }
+            ).then((data) => { return(data) }).catch((err) => { return err + " !!!";});
         }
         
     }
-    else{return "not a string";}
+    else {
+        return "not a string";
+    }
 }
  
 module.exports=git;
