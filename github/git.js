@@ -6,14 +6,14 @@ function git(username){
         if(filteredUsername.length===0){
             return "cannot be empty";
         }else{
-            let url=`https://api.github.com/users/${filteredUserna}/repos?direction=${"desc"}`;
+            let url=`https://api.github.com/users/${filteredUsername}/repos?direction=${"desc"}`;
             fetch(url).then((response)=>{
                 if(!response.ok){
          throw Error(response.statusText);
                 }
                 else{return response.json()}
             }
-            ).then((data) => { return(data) }).catch((err) => { return err + " !!!";});
+            ).then((data) => { return data }).catch((err) => { return err + " !!!";});
         }
         
     }
